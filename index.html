@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreio Fácil</title>
+    <!-- Link para o manifest.json -->
+    <link rel="manifest" href="/rastreio/manifest.json">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -269,6 +271,19 @@
     </div>
 
     <script>
+        // Registrar o Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/rastreio/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado com sucesso:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Falha ao registrar o Service Worker:', error);
+                    });
+            });
+        }
+
         // Get references to HTML elements
         const trackingNumberInput = document.getElementById('trackingNumber');
         const carrierSelect = document.getElementById('carrier');
@@ -436,7 +451,7 @@
             });
         }
 
-        // Function to get tracking URL (re-used from main logic)
+        // Function to get tracking URL
         function getTrackingUrl(trackingNumber, carrier) {
             let trackingUrl = '';
             switch (carrier) {
