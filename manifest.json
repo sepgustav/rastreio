@@ -8,14 +8,14 @@
   "theme_color": "#6366f1",              // Cor da barra de status do sistema (no Android)
   "icons": [
     {
-      "src": "http://googleusercontent.com/file_content/4", // URL da nova imagem dos Shih Tzus
+      "src": "https://raw.githubusercontent.com/sepgustav/rastreio/main/icone_rastreio.png", // URL da sua imagem no GitHub
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "http://googleusercontent.com/file_content/4", // URL da nova imagem dos Shih Tzus
+      "src": "https://raw.githubusercontent.com/sepgustav/rastreio/main/icone_rastreio.png", // URL da sua imagem no GitHub
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }
